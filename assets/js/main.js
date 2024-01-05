@@ -2,6 +2,10 @@ import { output } from "./output.js";
 
 (function () {
   "use strict";
+  const animationShown = localStorage.getItem("animationShown");
+  if (!animationShown) {
+    localStorage.setItem("animationShown", "true");
+  }
   const select = (el, all = false) => {
     el = el.trim();
     if (all) {
@@ -180,7 +184,7 @@ document.getElementById("cvLink").addEventListener("click", function () {
 });
 
 var textarea = $(".term");
-var speed = 50; //Writing speed in milliseconds
+var speed = 50;
 var text = "sh Mus_Porfolio.sh";
 
 var i = 0;
